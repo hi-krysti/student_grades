@@ -7,7 +7,7 @@ grades_df = pd.read_csv('student-data.csv')
 # print(grades_df)
 
 print('\nQuestion 1.1: Calculate mean for each individual subject')
-print(grades_df.mean())
+print(grades_df.mean(numeric_only=True))
 
 
 print('\nQuestion 1.2: Find the median grade in Math for all students')
@@ -21,12 +21,12 @@ print(grades_df['History'].mode())
 
 print('\nQuestion 2: Calculate correlation between the different subjects')
 grades_df = grades_df.drop(0)
-print(grades_df.corr())
+print(grades_df.corr(numeric_only=True))
 
 # correlation_matrix = np.corrcoef(grades_df['Math'], grades_df['Science'])
 # correlation = correlation_matrix[0, 1]
 
-print("History and Math have the strongest inverse correlation. No other subjects have significant correlation.")
+print("\nHistory and Math have the strongest inverse correlation. No other subjects have significant correlation.")
 
 
 print('\nQuestion 3: Write a Python function named desc_stats() that takes a list of numbers and prints the following statistical calculations:')
